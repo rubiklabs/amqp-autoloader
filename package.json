@@ -1,0 +1,23 @@
+{
+  "name": "rubiklabs-gs-core",
+  "description": "",
+  "version": "1.0.0",
+  "main": "lib/Server.js",
+  "types": "lib/Server.d.ts",
+  "repository": "git@github.com:rubiklabs/rubiklabs-gs-core.git",
+  "author": "Halil Safa SAĞLIK <safa@rubiklabs.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "amqplib": "^0.9.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/uuid": "^8.3.4",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.2"
+  }
+}
