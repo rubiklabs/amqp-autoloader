@@ -1,7 +1,7 @@
 {
   "name": "@rubiklabs/rubiklabs-gs-core",
   "description": "global microservice system base",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": false,
   "main": "lib/Server.js",
   "types": "lib/Server.d.ts",
