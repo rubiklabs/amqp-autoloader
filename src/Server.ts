@@ -14,6 +14,7 @@ interface ServerOptions {
     durable: boolean,
     ackMode: boolean,
     reply: boolean,
+    vhost: string,
   },
   serviceName: string
   path: string,
@@ -37,7 +38,7 @@ class Server {
   private reply: boolean;
 
   constructor(options: ServerOptions) {
-    this.connectionString = `amqp://${options.amqp.user}:${options.amqp.password}@${options.amqp.host}`;
+    this.connectionString = `amqp://${options.amqp.user}:${options.amqp.password}@${options.amqp.host}/${options.amqp.vhost}`;
     this.serviceId = `${options.serviceName}-${v4()}`;
     this.path = options.path;
     this.durable = options.amqp.durable;
@@ -47,9 +48,9 @@ class Server {
   }
 
   async setup() {
-    await this.createConnection();
+    this.connection = await this.createConnection();
     this.initConnectionEvent();
-    await this.createChannel();
+    this.channel = await this.createChannel() as EventEmitterChannel;
     this.createServiceCommunicationProtocol();
     if (this.reply) {
       this.setReplyQueue();
@@ -58,13 +59,8 @@ class Server {
     return this;
   }
   
-  private createConnection(): Promise<Connection> {
-    return new Promise((resolve, reject) => {
-      amqp.connect(this.connectionString, (err: any, connection: Connection) => {
-        if (err) return reject(err);
-        resolve(connection);
-      });
-    })
+  private async createConnection(): Promise<Connection> {
+    return await amqp.connect(this.connectionString);
   }
 
   private initConnectionEvent() {
@@ -79,10 +75,8 @@ class Server {
     });
   }
 
-  private createChannel() {
-    return new Promise((resolve, reject) => {
-      this.connection.createChannel().then(channel => resolve(channel)).catch(err => reject(err));
-    });
+  private async createChannel(): Promise<Channel> {
+    return await this.connection.createChannel();
   }
 
   private setReplyQueue() {
@@ -99,6 +93,9 @@ class Server {
   }
 
   private createServiceCommunicationProtocol() {
+    this.channel.assertQueue(this.serviceId, {
+      exclusive: true,
+    });
     this.channel.consume(this.serviceId, () => {
       this.publishServiceInfo();
     });

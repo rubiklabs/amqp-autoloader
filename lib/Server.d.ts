@@ -10,6 +10,7 @@ interface ServerOptions {
         durable: boolean;
         ackMode: boolean;
         reply: boolean;
+        vhost: string;
     };
     serviceName: string;
     path: string;
