@@ -1,5 +1,5 @@
 {
-  "name": "@rubiklabs/rubiklabs-gs-core",
+  "name": "@rubiklabs/amqp-autoloader",
   "description": "global microservice system base",
   "version": "1.0.0",
   "private": false,
@@ -7,7 +7,7 @@
   "types": "lib/Server.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/rubiklabs/rubiklabs-gs-core.git"
+    "url": "git+ssh://git@github.com/rubiklabs/amqp-autoloader.git"
   },
   "author": "Halil Safa SAĞLIK <safa@rubiklabs.com>",
   "license": "MIT",
@@ -27,11 +27,12 @@
     "typescript": "^4.7.4"
   },
   "bugs": {
-    "url": "https://github.com/rubiklabs/rubiklabs-gs-core/issues"
+    "url": "https://github.com/rubiklabs/amqp-autoloader/issues"
   },
-  "homepage": "https://github.com/rubiklabs/rubiklabs-gs-core#readme",
+  "homepage": "https://github.com/rubiklabs/amqp-autoloader#readme",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "test"
   },
   "keywords": [
     "rabbitmq"
