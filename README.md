@@ -1,1 +1,1 @@
-# rubiklabs-gs-core
+# amqp-autoloader
