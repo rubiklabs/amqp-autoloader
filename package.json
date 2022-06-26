@@ -15,7 +15,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "amqplib": "^0.9.1",
+    "amqplib": "^0.10.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
