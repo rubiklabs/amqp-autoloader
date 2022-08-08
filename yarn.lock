@@ -86,9 +86,9 @@ acorn@^8.4.1:
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
 
 amqplib@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/amqplib/-/amqplib-0.10.0.tgz#766d696f8ceae097ee9eb73e6796999e5d40a1db"
-  integrity sha512-UueEnRGY6upiSvGsSYM22Woa1SeSukqYtqgYW4Gj8gHvbf5BRhhYRqf3kQ8aSUYYffTOZi6SeOVW2eOXt0hpPA==
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/amqplib/-/amqplib-0.10.2.tgz#04ec8cbdcdf526dc36a4e46fb0591d449dca3372"
+  integrity sha512-l8U1thHT5QRNJF6Fv6ZveMeHV/bl+3UROQBn/cLOwRfeV3F0syZxkjnumJCG4NMvqfy9wT7mCgwpPSq2fApRpA==
   dependencies:
     bitsyntax "~0.1.0"
     buffer-more-ints "~1.0.0"
