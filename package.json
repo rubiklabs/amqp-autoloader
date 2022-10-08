@@ -1,7 +1,7 @@
 {
   "name": "@rubiklabs/amqp-autoloader",
   "description": "global microservice system base",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "private": false,
   "main": "lib/Server.js",
   "types": "lib/Server.d.ts",
