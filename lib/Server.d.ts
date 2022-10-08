@@ -37,7 +37,7 @@ declare class Server {
     private createChannel;
     private setReplyQueue;
     private createServiceCommunicationProtocol;
-    publishServiceInfo(): this;
+    publishServiceInfo(): this | undefined;
     private consumeController;
 }
 export default Server;
