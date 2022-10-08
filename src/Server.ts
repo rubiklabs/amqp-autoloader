@@ -102,6 +102,8 @@ class Server {
   }
 
   publishServiceInfo() {
+    if (!fs.existsSync(this.path)) return;
+
     fs.readdirSync(this.path).forEach((file) => {
       if (!fs.existsSync(path.join(this.path, file, `${file}.route.js`)) && !fs.existsSync(path.join(this.path, file, `${file}.doc.js`))) return;
       
@@ -114,6 +116,8 @@ class Server {
   }
 
   private consumeController() {
+    if (!fs.existsSync(this.path)) return;
+
     fs.readdirSync(this.path).forEach((file) => {
       if (!fs.existsSync(path.join(this.path, file, `${file}.route.js`))) return;
 
